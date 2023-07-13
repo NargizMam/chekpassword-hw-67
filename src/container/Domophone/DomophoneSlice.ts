@@ -5,15 +5,13 @@ export interface CalcState {
     passwordBorder: string;
     passwordText: string;
     value: string;
-    stars: string;
 }
 
 const initialState: CalcState = {
     password: '2835',
     passwordBorder: 'border-dark',
-    passwordText: 'Enter code!',
+    passwordText: '',
     value: '',
-    stars: '',
 };
 
 export const domophoneSlice = createSlice({
@@ -23,24 +21,25 @@ export const domophoneSlice = createSlice({
         changeValue: (state, action: PayloadAction<string>) => {
             if(state.value.length < 4){
                 state.value += action.payload;
-                state.stars += "*";
+                state.passwordText += "*";
             }else{
-                state.passwordBorder = 'border-red';
+                state.passwordBorder = 'border border-danger';
                 return;
             }
         },
         checkPassword: (state) => {
+            state.passwordText =''
             if(state.password === state.value){
                 state.passwordBorder = 'border-success'
-                state.value = 'Access Granted!';
+                state.passwordText = 'Access Granted!';
             }else {
-                state.value = 'Access Denied!';
+                state.passwordText= 'Access Denied!';
                 state.passwordBorder = 'border-danger';
             }
         },
         deleteOneNumber: (state) => {
             state.value = state.value.substring(0, state.value.length - 1);
-            state.stars = state.stars.substring(0, state.stars.length - 1);
+            state.passwordText = state.passwordText.substring(0, state.passwordText.length - 1);
         }
     }
 });

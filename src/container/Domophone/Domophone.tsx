@@ -10,7 +10,6 @@ import {Button, Col, Container} from "react-bootstrap";
 const Domophone = () => {
     const text = useSelector((state: RootState)=> state.domophone.passwordText);
     const border = useSelector((state: RootState)=> state.domophone.passwordBorder);
-    const stars = useSelector((state: RootState)=> state.domophone.stars);
     const dispatch = useDispatch();
 
     const btnNumber = (
@@ -25,8 +24,9 @@ const Domophone = () => {
     return (
         <Container fluid="md">
             <Col xs lg="2">
-                <div className={`border ${border} p-3`}>
-                    {stars ? stars : text}
+                <h4>Push your code</h4>
+                <div className={`border border-5 ${border} p-3 `} style={{ height: '4rem' }} >
+                    {text}
                 </div>
                 <div className="calc__body m-2">
                     {btnNumber}
