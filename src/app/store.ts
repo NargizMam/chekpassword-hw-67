@@ -1,7 +1,9 @@
 import {configureStore} from "@reduxjs/toolkit";
+import {domophoneReducer} from "../container/Domophone/DomophoneSlice";
 
 export const store = configureStore({
     reducer:{
+        domophone: domophoneReducer
     },
 });
 

@@ -1,12 +1,13 @@
 import React from 'react';
+import {Button} from "react-bootstrap";
 
 
 
 const BtnNumber = () => {
     return (
         <>
-            <button className="btn btn-dark border border-black m-2"
-            >0</button>
+            <Button variant="warning">Warning</Button>{' '}
+
         </>
     );
 };
