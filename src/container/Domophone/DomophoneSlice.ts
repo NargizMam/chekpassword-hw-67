@@ -9,9 +9,9 @@ export interface CalcState {
 }
 
 const initialState: CalcState = {
-    password: '1234',
+    password: '2835',
     passwordBorder: 'border-dark',
-    passwordText: 'Enter password!',
+    passwordText: 'Enter code!',
     value: '',
     stars: '',
 };

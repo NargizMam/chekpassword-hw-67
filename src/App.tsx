@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Domophone from "./container/Domophone/Domophone";
 
 function App() {
